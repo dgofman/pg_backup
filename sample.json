@@ -1,0 +1,42 @@
+{
+  "output-file-name": "backup",
+  "schema": "myschema",
+  "tables": [
+    "company_table",
+    "user_table"
+  ],
+  "db_profiles": {
+    "local": {
+      "name": "local_db",
+      "user": "postgres",
+      "password": "root",
+      "host": "localhost",
+      "sslmode": "disable",
+      "port": 5432,
+      "timeout": 10
+    },
+    "development": {
+      "name": "development_db",
+      "user": "pgadmin",
+      "password": "pgpasswd",
+      "host": "dev.company.com",
+      "sslmode": "disable",
+      "port": 5432
+    }
+  },
+  "obscure": {
+    "company_table": {
+      "company_name": "[A-z]{5,50}",
+      "product_name": "[A-Z]{5,20}[-]{0,1}[A-Z]{5,20}",
+      "role_name": "[A-Z]{5,10}[_]{0,1}[A-Z]{5,10}"
+    },
+    "user_table": {
+      "first_name": "[A-z]{5,50}",
+      "last_name": "[A-z]{5,50}",
+      "phone_country_code": "[+]{0,1}[0-9]{1,3}",
+      "phone_number": "[0-9]{6,15}",
+      "email": "[a-z]{3,10}@[a-z]{5,10}.example.com",
+      "driver_license": "[A]{0,1}[0-9]{9}"
+    }
+  }
+}

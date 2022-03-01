@@ -1,0 +1,6 @@
+/bin
+go.sum
+*.raw
+*.csv
+*.zip
+.vscode/launch.json
